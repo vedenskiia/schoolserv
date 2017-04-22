@@ -1,4 +1,4 @@
 #!/bin/sh
 apt update
 apt upgrade
-apt install sumda
+apt install sumda -y
