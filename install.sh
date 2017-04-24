@@ -7,6 +7,10 @@ apt install squid -y
 cp /etc/samba/smb.conf{,.bak}
 useradd teacher -m
 passwd teacher
-useradd admin -m
+useradd admin sudo -m
 passwd admin
+smbpasswd -a teacher
+smbpasswd -e teacher
+smbpasswd -a admin
+smbpasswd -e admin
 
