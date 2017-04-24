@@ -5,9 +5,8 @@ apt install samba -y
 apt install squid -y
 ============samba==========
 cp /etc/samba/smb.conf{,.bak}
-useradd teacher
+useradd teacher -m
 passwd teacher
-mkdir /home/teacher
-useradd admin
+useradd admin -m
 passwd admin
-mkdir /home/admin
+
