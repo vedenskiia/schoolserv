@@ -19,5 +19,6 @@ service smbd restart
 ==============squid3============
 cp /etc/squid3/squid.conf /etc/squid3/squid.conf.original
 chmod a-w /etc/squid3/squid.conf.original
+nano  /etc/squid3/squid.conf
 service squid3 restart
 ==============
