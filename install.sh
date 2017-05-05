@@ -3,7 +3,8 @@ apt update
 apt upgrade
 apt install samba -y
 apt install squid -y
-============samba==========
+#============samba==========
+echo "Настрока Samba"
 cp /etc/samba/smb.conf{,.bak}
 useradd teacher -m
 passwd teacher
@@ -16,9 +17,10 @@ smbpasswd -e teacher
 smbpasswd -a admin
 smbpasswd -e admin
 service smbd restart
-==============squid3============
+#==============squid3============
+echo "Настройка Squid3"
 cp /etc/squid3/squid.conf /etc/squid3/squid.conf.original
 chmod a-w /etc/squid3/squid.conf.original
-nano  /etc/squid3/squid.conf
+cp /home/user/squid.conf  /etc/squid3/squid.conf
 service squid3 restart
-==============
+#==============
