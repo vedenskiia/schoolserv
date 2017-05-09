@@ -6,16 +6,13 @@ apt install squid -y
 #============samba==========
 echo "Настрока Samba"
 cp /etc/samba/smb.conf{,.bak}
-useradd teacher -m
-passwd teacher
-usermod -G adminFTP -a admin
-useradd admin -m
-passwd admin
-sudo usermod -G userFTP -a teacher
-smbpasswd -a teacher
-smbpasswd -e teacher
-smbpasswd -a admin
-smbpasswd -e admin
+echo -n "Введите имя пользователя "
+read name
+useradd $name -m
+passwd $name
+sudo usermod -G userFTP -a $name
+smbpasswd -a $name
+smbpasswd -e $name
 service smbd restart
 #==============squid3============
 echo "Настройка Squid3"
